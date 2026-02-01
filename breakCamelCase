@@ -1,0 +1,28 @@
+Console.WriteLine("Escribe una variable con camelCase");
+string camelCase = "camelCase";
+
+
+static string BreakCamelCase(string str)
+{
+    string resultado = "";
+
+    for (int i = 0;i < str.Length; i++)
+    {
+        char upper = char.ToUpper(str[i]);
+        
+        if (str[i] == upper)
+        {
+            resultado += " " + str[i];
+        }
+        else
+        {
+            resultado += str[i];
+        }
+
+    }
+    return resultado;
+}
+
+string retunable = BreakCamelCase(camelCase);
+
+Console.WriteLine(retunable);
