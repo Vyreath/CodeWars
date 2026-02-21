@@ -1,0 +1,49 @@
+Console.WriteLine("Enter a word to convert to Pig Latin:");
+string str = Console.ReadLine();
+
+
+static String nose (string str)
+{
+    string [] palabras = str.Split(' ');
+    string resultado = "";
+    string palabra = "";
+    string letra= "";
+
+    for (int i = 0; i < palabras.Length; i++)
+    {
+        palabra = palabras[i];
+
+        for (int j = 0; j < palabra.Length; j++)
+        {
+            if (j == 0 && palabra.All(char.IsLetter))
+            {
+                letra = palabra[j] + "ay";
+            }
+            else if (j > 0)
+            {
+                resultado += palabra[j];
+            }
+            else 
+            {
+                resultado += palabra[j];
+            }
+       
+
+        }
+        resultado += letra;
+        letra = "";
+        
+        if (palabras.Length-1 != i)
+        {
+            resultado += " ";
+        }
+       
+    }
+
+    return resultado;
+
+}
+
+string yoquese = nose(str);
+
+Console.WriteLine(yoquese);
